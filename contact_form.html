@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <link rel="icon" href="imgs/email.png"/> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;800&display=swap">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap" > -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,700;1,300;1,900&display=swap">
+  <title>Contact Me</title>
+</head>
+<body>
+
+  <header>
+  	<nav>
+  		<h1 id="name">Tasha Torchon</h1>
+  		<ul>
+  			<li><a href="index.html">Who Am I?</a></li>
+  			<li><a href="projects.html">Projects</a></li>
+  			<li><a href="site.html">Site Details</a></li>
+  			<li><a class="active_page" href="contact_form.html">Contact</a></li>
+  		</ul>
+  	</nav>
+
+  </header>
+
+  <br>
+
+ <form method='post' action='https://formspree.io/f/mnqovjld'>
+  <fieldset>
+    <legend>Contact Me</legend>
+
+    <label for="name_id">Name (Required)</label>
+    <input type="text" placeholder="Your Name (Required)" name="name" id = "name_id" required>
+
+    <label for="email_id">Email (Required)</label>
+    <input type="email" placeholder="Your Email (Required)" name="email" id="email_id" required>
+
+
+    <!-- <label for="phone_id">Phone Number</label> -->
+    <!-- <input type="tel" name="phone" id ="phone_id" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+    <div><span>Format: 123-456-7890</span></div> -->
+
+
+
+    <label for="subject_id">Subject</label>
+    <input type="text" name="subject" placeholder="Subject" id = "subject_id"></textarea>
+
+    <label for="msg_id">Leave A Message</label>
+    <textarea name="msg" placeholder="Leave a Message" id = "msg_id"></textarea>
+
+    <!-- <input type="checkbox" name ="remember" id ="cbox">
+    <label for="cbox">Remember me</label> -->
+
+    <input type="submit" value="Send">
+  </fieldset>
+ </form>
+
+ <br>
+ <br>
+ <br>
+
+ <footer>Website Design: Tasha Torchon</footer>
+</body>
+</html>

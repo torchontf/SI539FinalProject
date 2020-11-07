@@ -1,0 +1,352 @@
+/* To do: stretch out footer, flavicon, offset picture and background using grid, content on other parts of site, reduced motion, fill grid column fill with background color,  */
+
+.custom {
+  cursor: url("imgs/small_purple_torch.png"), auto;
+}
+
+@font-face {
+  font-family: Audrey;
+  src: url("../audrey-woff/Audrey-Normal.woff")
+}
+
+@font-face {
+  font-family: Audrey;
+  src: url("../audrey-woff/Audrey-Bold.woff")
+  font-weight: bold;
+}
+
+:focus {
+  color: #81007F;
+  font-weight: bold;
+}
+
+nav h1 {
+  font-family: 'Montserrat Alternates';
+  font-style: italic;
+  text-align: center;
+  letter-spacing: .15em;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  font-size: 30px;
+  /* align-items: center; */
+}
+
+header {
+  color:#69186a;
+  border-bottom: #008080 solid;
+  font-size: 42px;
+  padding: 25px;
+}
+
+.active_page {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+body {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 18px;
+  /* color:#4a134a; */
+  color: #46230a;
+  background-color: rgba(210, 177, 150, 0.2);
+  cursor: url("../imgs/small_purple_torch.png"), auto;
+  letter-spacing: .1em;
+}
+
+h1 {
+  font-family: Audrey;
+  text-align: center;
+}
+
+h2 {
+  letter-spacing: 3px;
+}
+
+.image_title {
+  text-align: center;
+}
+
+figure {
+  background-color: #C8A2C8;
+}
+
+footer {
+  background-color: #004040;
+  /* #008080; */
+  color: #f8f8ff;
+  text-align: right;
+  /* padding: 30px; */
+  min-height: 40px;
+  bottom: 0;
+  margin: -1.2rem;
+  /* add back negative margin value */
+  padding: 1.2rem;
+  width: 100%;
+}
+
+a {
+  color:#008080;
+  text-decoration: none;
+}
+
+.current_link {
+  color: #81007F;
+  font-weight: bold;
+}
+
+/* Who Am I? */
+
+.intro {
+  display: grid;
+  grid-row-gap: 25px;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
+  grid-template-rows: auto;
+}
+
+blockquote {
+  margin: 0 auto;
+  padding: 1em;
+  border-left: 5px solid #46230a;
+}
+
+.intro > img {
+  grid-column: 2 / span 1;
+  max-height: 400 px;
+}
+
+.intro > blockquote {
+  grid-column: 3 / span 1;
+}
+
+.travel_pics {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  /* overflow: auto; */
+  height: 600px;
+  width: 600px;
+  padding: 10px;
+  overflow: auto;
+  border: 1px solid #000000;
+  text-align:center;
+  justify-content: center;
+  margin: auto;
+}
+
+.photo {
+  width:400px;
+  padding: 10px;
+}
+
+.photo:last-child {
+  position: relative;
+}
+
+.photo:last-child::after {
+  display: block;
+  width: 11px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 100%
+  visibility: hidden;
+  content: "";
+}
+
+/* Collapsibles (Projects Page) */
+
+.collapse {
+  cursor: pointer;
+  background-color: #C8A2C8;
+  color: #000000;
+  padding: 15px;
+  border-radius: 10px;
+  border: #69186a solid;
+  font-size: 24px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+}
+
+.active, .collapse:hover {
+  background-color: #69186a;
+  border: #69186a solid;
+  color: #FFFFFF;
+}
+
+.collapse:after {
+  content: "+";
+  right: 20px;
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+
+}
+
+.active:after {
+  content: "-";
+  right: 20px;
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.collapsed_content {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+  background-color: #C8A2C8;
+  color: #000000;
+  font-size: 24px;
+}
+
+.collapsed_gallery {
+  min-heigth: 400px
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+
+}
+
+.collapsed_gallery > img {
+  width: 500px;
+  margin:auto;
+}
+
+
+/* Contact Form */
+
+form {
+  border: none;
+}
+
+legend{
+  font-family: Audrey;
+  font-size: 125%;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+label{
+  display: inline-block;
+  margin-right: 10px;
+  width: 50%;
+  font-size: 2em;
+}
+
+input[type=checkbox]{
+  display:inline;
+  width:inherit;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #CCCCCC;
+  box-sizing: border-box;
+  font-family: Catamaran;
+  letter-spacing: inherit;
+  font-size: 1.5em;
+}
+
+span{
+  margin-left:20%;
+  font-family: italic;
+  font-weight: bold;
+}
+
+textarea{
+  width: 100%;
+  height: 35vh;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: Catamaran;
+  font-size: 1.5em;
+  letter-spacing: inherit;
+}
+
+
+input[type=submit] {
+  background-color: #004040;
+  color: #FFFFFF;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-family: Montserrat Alternates;
+  letter-spacing: 3px;
+  font-size: 3em;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+
+
+/* IDs */
+
+#fonts {
+  text-align: center;
+  /* color: #000000; */
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+#Audrey {
+  font-family: 'Audrey';
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #C8A2C8;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+
+#Catamaran {
+  font-size: 24px;
+  background-color: #C8A2C8;
+  /* font-weight: bold; */
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+#Montserrat {
+  font-family: 'Montserrat Alternates';
+  font-size: 24px;
+  background-color: #C8A2C8;
+  /* font-weight: bold; */
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+
+#wonder {
+  font-family: 'Montserrat Alternates';
+  font-size: 24px;
+  font-weight: bold;
+  color:#69186a;
+  text-align: center;
+}
+
+/* Reduced motion */
+
+@media screen and (prefers-reduced-motion: reduce){
+  .collapsed_content {
+    transition: none;
+  }
+
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SI 649 - Individual Project</title>
+    <link href="https://kineticgraphs.org/css/kg.0.2.1.css" rel="stylesheet" type="text/css">
+    <script src="https://kineticgraphs.org/js/kg.0.2.1.js"></script>
+    <style type='text/css'>
+                h1 {
+                    border-bottom: 4px solid rgb(0, 0, 0);
+                  }
+
+                b {
+                  border-bottom: 1px solid rgb(0, 0, 0);
+                  }
+
+                body {
+                  font-family: sans-serif;
+                  letter-spacing: .1em;
+                }
+
+
+    </style>
+</head>
+<body>
+
+<h1><center>Market Equilibrium and Deadweight Loss</center></h1>
+<br>
+
+<p>Let's discuss market equilibrium.</p>
+<br>
+<img src="imgs/page1.png" width="484" height="484" alt="Market Equilibrium">
+<br>
+<br>
+<p>Above we have an orange market demand curve and a purple market supply curve. The market curves represent the aggregate supply and demand of the independent actors in a market. The place at which they meet is the equilibrium price. For $5 (y-axis), consumers are willing to buy 4 items. Let's say they're avocados.</p>
+
+<p>Refer to triangle A on the graph. This area represents the consumer surplus. It is the extra benefit that consumers receive from buying at the current market price. The graph shows that there are people willing to buy as few as 1 avocado for $8. Thanks to the market equilibrium they are able to get four times the avocados for $3 less. Another way to look at it is that they only have to pay $1.25 per avocado ($5 divided by 4 avocados).</p>
+
+<p>Similarly, area B represents the producer surplus. At point (1,2), some producers may have anticipated $2 in revenue ($2 for 1 good sold). This market, however, can provide 10 times that amount ($20 in revenue). </p>
+
+<p>One way to quanitfy the surplus of these actors is to calculate the area of the triangles. Taking the area to be 0.5 x base x height, we see that consumer surplus is 0.5 x (9-5) x (4-0) = 8. Similarly, producer surplus is about 0.5 x (5-0.4) x (4-0) = 9.2. At market equilibrium, producers and consumers are able to maximize their surpluses. Inefficiencies in the market can change this however. Here, we consider the tax effect.</p>
+<br>
+
+<h3><center>Tax Effect</center></h3>
+<img src="imgs/page2.png" width="500" height="484" alt="Static Tax Effect">
+<br>
+<p>A tax is one kind of allocative inefficiency or excess burden, as shown in the image above. With the addition of a tax, the marginal cost of avocados increases from MC to MC'. This disadvantages both consumers and producers. If we follow the blue dotted lines (including the ones interspersed by orange and purple), we'll see that after the tax, the triangles for consumer and producer surplus are now smaller. They now have an area of 4.5 and 5.4, respectively. The market has changed such that consumers are not getting as much bang for their buck. We now have $6 for 3 avocados instead of $5 for 4. Producers are also getting less revenue - $12 instead of $20.</p>
+
+<p>What about these new shapes B, C, E, and F? They illustrate how the consumer and producer losses have been reallocated. B and C are the revenue that the government collects from taxes. They can also be seen as government surplus. E and F represent deadweight loss (DWL). Because of the changes in price caused by the tax, there is less avocado output in this market. It isn't worth selling 4 avocados anymore because consumers will not buy all of them. Consumers aren't interested in buying all the four avocados at the new price (about $7). This lost output, or deadweight loss, is the social cost of the tax.</p>
+
+<div class="kg-container">
+
+  schema: EconSchema
+
+  params:
+    - name: demandShift
+      value: 0
+      min: 0
+      max: 5
+      round: 0.1
+    - name: supplyShift
+      value: 0
+      min: -5
+      max: 0
+      round: 0.1
+
+  calcs:
+    demandChanged: ((params.demandShift-0)^2 > 0.04)
+    supplyChanged: ((params.supplyShift-0)^2 > 0.04)
+
+  layout:
+    TwoHorizontalGraphs:
+      name: Tax Effect
+      leftGraph:
+        xAxis:
+          title: Quantity
+          ticks: 10
+        yAxis:
+          title: Price
+          ticks: 10
+        objects:
+
+        - EconLinearEquilibrium:
+              name: oldEquilibrium
+              demand:
+                name: MB
+                xIntercept: 10
+                invSlope: -1
+                color: orange
+
+
+              supply:
+                name: MC
+                yIntercept: 2
+                slope: 1
+                color: purple
+                <!-- surplus:
+                  fill: purple -->
+
+                pts:
+                - name: a
+                  <!-- y: 8 -->
+              equilibrium:
+                color: black
+                droplines:
+                  vertical: Q_0
+                  horizontal: P_0
+
+        - EconLinearEquilibrium:
+            name: newEquilibrium
+            demand:
+              name: MB1
+              xIntercept: 10
+              invSlope: -1
+              color: orange
+
+
+            supply:
+              name: MC1
+              yIntercept: 2 - params.supplyShift
+              slope: 1
+              color: blue
+              drag:
+                - horizontal: supplyShift
+            equilibrium:
+              color: black
+              show: (calcs.demandChanged || calcs.supplyChanged)
+              droplines:
+                name: dlines1
+                vertical: "`Q_1 = ${calcs.newEquilibrium.Q.toFixed(2)}`"
+                horizontal: "`P_1 = ${calcs.newEquilibrium.P.toFixed(2)}`"
+
+        - EconLinearEquilibrium:
+            name: newEquilibrium2
+            demand:
+              name: MB1
+              xIntercept: 10
+              invSlope: -1
+              color: orange
+            supply:
+              name: MC1
+              yIntercept: 2 + params.supplyShift
+              slope: 1
+              strokeWidth: 0
+              pts:
+              - name: a
+                y: 8
+              drag:
+                - horizontal: supplyShift
+            equilibrium:
+              opacity: 0
+              color: black
+              show: (MC || dlines)
+              droplines:
+                name: dlines2
+                horizontal: "`P_1 = ${calcs.newEquilibrium2.P.toFixed(2)}`"
+
+
+      rightGraph:
+        xAxis:
+          strokeWidth: 0
+          opacity: 0
+          line: None
+          max: 25
+          ticks: 0
+        yAxis:
+          ticks: 0
+          max: 40
+        objects:
+        - Rectangle:
+            x1: 5
+            x2: 12.2
+            y1: 12
+            y2: 14
+            fill: blue
+            stroke: blue
+            strokeWidth: 1
+            label: {text: Surplus}
+        - Rectangle:
+            x1: 5
+            x2: 12.2
+            y1: 14
+            y2: 16
+            fill: blue
+            stroke: blue
+            strokeWidth: 1
+            label: {text: Government}
+
+
+        - Segment:
+            a: [5,18]
+            b: [5, 28]
+            stroke: purple
+            strokeWidth: 1
+        - Segment:
+            a: [5,28]
+            b: [14, 28]
+            stroke: black
+            lineStyle: dotted
+            strokeWidth: 1
+        - Segment:
+            a: [12.2,26]
+            b: [14, 28]
+            stroke: black
+            lineStyle: dotted
+            strokeWidth: 1
+        - Segment:
+            a: [5,18]
+            b: [12.2, 26]
+            stroke: purple
+            strokeWidth: 1
+        - Point:
+            x: 5
+            y: 23.5
+            color: purple
+            opacity: 0
+            label:
+              text: Producer
+              location: tl
+        - Point:
+            x: 5
+            y: 21.5
+            color: purple
+            opacity: 0
+            label:
+              text: Surplus
+              location: tl
+        - Rectangle:
+            x1: 5
+            x2: 12.2
+            y1: 28
+            y2: 26
+            fill: gray
+            stroke: black
+            strokeWidth: 1
+            label: {text: Loss}
+
+
+        - Segment:
+            a: [5,32]
+            b: [5, 40]
+            stroke: orange
+            strokeWidth: 1
+        - Segment:
+            a: [5,32]
+            b: [12.2, 32]
+            stroke: black
+            lineStyle: dotted
+            strokeWidth: 1
+        - Segment:
+            a: [5,40]
+            b: [12.2, 32]
+            stroke: orange
+            strokeWidth: 1
+        - Point:
+            x: 5
+            y: 34
+            color: orange
+            opacity: 0
+            label:
+              text: Consumer
+              location: bl
+        - Point:
+            x: 5
+            y: 32
+            color: orange
+            opacity: 0
+            label:
+              text: Surplus
+              location: tl
+        - Rectangle:
+            x1: 5
+            x2: 12.2
+            y1: 30
+            y2: 32
+            fill: gray
+            stroke: black
+            strokeWidth: 1
+            label: {text: Loss}
+        - Segment:
+            a: [12.2, 32]
+            b: [14, 30]
+            stroke: black
+            strokeWidth: 1
+            lineStyle: dotted
+        - Segment:
+            a: [12.2, 30]
+            b: [14, 30]
+            stroke: black
+            strokeWidth: 1
+            lineStyle: dotted
+
+
+        - Segment:
+            a: [12.2, 10]
+            b: [14, 8]
+            stroke: black
+            strokeWidth: 1
+            lineStyle: dotted
+        - Segment:
+            a: [12.2, 6]
+            b: [14, 8]
+            stroke: black
+            strokeWidth: 1
+            lineStyle: dotted
+        - Segment:
+            a: [12.2, 6]
+            b: [12.2, 10]
+            stroke: black
+            strokeWidth: 1
+            lineStyle: dotted
+        - Segment:
+            a: [12.2, 8]
+            b: [14, 8]
+            stroke: black
+            strokeWidth: 1
+            lineStyle: dotted
+        - Point:
+            x: 11.75
+            y: 7.5
+            color: black
+            opacity: 0
+            label:
+              text: DWL
+              location: tl
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<p>This information is summarized in the graph above. Slide the blue line in the area to the top left of the graph. As taxes increase, so do government revenue and deadweight loss. Consumer and producer surplus decrease, however. </p>
+
+<p>Keep in mind that this is a simplified model and shows only one type of reallocation. It doesn't account for the effects of changes in elasticity or nonlinear supply and demand. It also doesn't account for any indirect benefits that consumers and producers may derive from government revenue (e.g. public works and safety). </p>
+
+
+
+
+
+</body>
+</html>

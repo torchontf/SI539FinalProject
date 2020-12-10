@@ -1,0 +1,211 @@
+/* About Page */
+/* Grid Container Section*/
+/*Gold cursor */
+body {
+  cursor: url("../imgs/small_gold_torch.png"), auto;
+}
+
+/* Grid-container Section */
+.grid-container {
+  display: grid;
+  grid-row-gap: 25px;
+  grid-column-gap: 25px;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: auto auto auto;
+  background-image: url("../imgs/intro.png");
+  padding: 25px;
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center;  /* Parallax effect */
+  /* background-repeat: no-repeat; /* Parallax effect */ */
+  background-size: cover; /* Parallax effect */
+}
+
+.intro-img {
+  grid-row: 1 / span 1;
+  grid-column: 2/ span 1;
+  background-color: #008080;
+}
+
+.intro-img img {
+  width: 100%;
+  display: block;
+  border: 5px solid;
+}
+
+.intro-txt {
+  grid-row: 2 / auto;
+  grid-column: 2/ span 1;
+  background-color: #008080;
+  padding: 2em;
+  border: 5px solid;
+}
+
+.intro-txt h2, .intro-txt p {
+  color: #FFF5C3;
+}
+
+.bio {
+  background-color: #69186a;
+  grid-row: 3 / auto;
+  grid-column: 2 / span 1;
+  padding: 2em;
+  border: 5px solid;
+}
+
+.bio h2, .bio p {
+  color: #CCCCFF;
+}
+
+/* Travel Section */
+
+#display, #caption {
+  display: none;
+}
+
+#travel_pics {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  /* overflow: auto; */
+  max-height: 750px;
+  max-width: 700px;
+  padding: 10px;
+  overflow: auto;
+  border: 1px solid #000000;
+  text-align:center;
+  justify-content: center;
+  margin: auto;
+      background-color: rgba(210, 177, 150, 0.5);
+}
+.photo {
+  max-width:650px;
+  padding: 10px;
+}
+
+span {
+  font-family: 'Catamaran', sans-serif;
+  border: 5px solid;
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 25px;
+  background-color: #00022e;
+  color: #e6e6ea;
+}
+
+.photo:last-child {
+  position: relative;
+}
+
+.photo:last-child::after {
+  display: block;
+  width: 11px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 100%
+  visibility: hidden;
+  content: "";
+}
+
+/* Larger screen */
+@media all and (min-width: 800px){
+
+  .grid-container {
+    display: grid;
+    grid-row-gap: 25px;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    padding: 25px;
+  }
+
+  .intro-img {
+    grid-row: 1 / span 3;
+    grid-column: 3 / auto;
+  }
+
+  .intro-txt {
+    grid-row: 2 / span 1;
+    grid-column: 2/ auto;
+  }
+
+  .bio {
+    background-color: #69186a;
+    grid-row: 4 / auto;
+    grid-column: 2 / span 2;
+  }
+
+  #travel {
+    /* background-color: #C8A2C8; */
+    padding: 5em;
+    /* #003152; */
+    /* #C8A2C8; */
+  }
+
+  #display{
+    border: 5px solid;
+    max-width: 750px;
+    height: 562px;
+    margin: 0 auto;
+    /* margin-right: auto; */
+    text-align: center;
+    padding: 25px;
+    /* vertical-align: middle; */
+    font-size: 200%;
+    /* background-color: #46230a; */
+    background-color: #00022e;
+    color: #e6e6ea;
+    display: block;
+    /* display: table-cell; */
+    /* #C8A2C8; */
+    /* rgba(210, 177, 150, 0.5); */
+    /* background-color: #003152; */
+  }
+
+
+  .caption {
+    border: 5px solid;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
+    /* font-size: 200%; */
+    background-color: #00022e;
+    color: #e6e6ea;
+  }
+
+  #caption {
+    display: block;
+  }
+
+  #travel_pics {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* overflow: auto; */
+    max-height: 300px;
+    max-width: 1000px;
+    padding: 10px;
+    overflow: auto;
+    border: 1px solid #000000;
+    text-align:center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .photo {
+    max-width:250px;
+    heigth: 190px;
+    padding: 10px;
+  }
+  span {
+    display: none;
+  }
+}
+
+/* Reduced Motion */
+@media screen and (prefers-reduced-motion: reduce){
+  .grid-container{
+    background-attachment: initial;
+  }
+}

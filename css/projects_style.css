@@ -1,0 +1,95 @@
+/* Accordion (Projects Page) */
+.banner {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 300px;
+  background-image: url("../imgs/leaves2.png");
+  max-width: 100%;
+  background-repeat: no-repeat;
+  justify-items: center;
+  align-items: center;
+  background-attachment: fixed; /* Parallax effect */
+  background-size: cover;
+}
+
+.banner h1 {
+  grid-row: 2/span 1;
+  background-color: #EFF8F3;
+  padding: 5px;
+}
+
+.collapse {
+  cursor: pointer;
+  background-color: #C8A2C8;
+  color: #000000;
+  padding: 15px;
+  border-radius: 10px;
+  border: #69186a solid;
+  font-size: 24px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+}
+
+.active, .collapse:hover {
+  background-color: #69186a;
+  border: #69186a solid;
+  color: #FFFFFF;
+}
+
+.collapse:after {
+  content: "+";
+  right: 20px;
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+
+}
+
+.active:after {
+  content: "-";
+  right: 20px;
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+  background-color: #C8A2C8;
+  color: #000000;
+  font-size: 24px;
+  border-radius: 10px
+}
+
+.collapsed_gallery {
+  min-heigth: 400px
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+
+}
+
+.collapsed_gallery > img {
+  width: 500px;
+  margin:auto;
+}
+
+/* Reduced Motion */
+
+@media screen and (prefers-reduced-motion: reduce){
+  .banner {
+    transition: none;
+  }
+
+  .skip a{
+    -webkit-transition: none; /* sets to default setting */
+    transition: none;        /* sets to default setting */
+   }
+
+}

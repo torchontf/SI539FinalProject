@@ -2,7 +2,6 @@ var display = document.getElementById('display');
 var caption = document.getElementById('caption');
 var photos = document.getElementsByClassName('photo');
 
-
 ['mouseover', 'focus'].forEach(function(e) {
   for (var i = 0; i < photos.length; i++) {
     photos[i].addEventListener(e, function() {

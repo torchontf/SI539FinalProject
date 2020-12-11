@@ -6,12 +6,12 @@
 
 @font-face {
   font-family: Audrey;
-  src: url("../audrey-woff/Audrey-Normal.woff")
+  src: url("../audrey-woff/Audrey-Normal.woff");
 }
 
 @font-face {
   font-family: Audrey;
-  src: url("../audrey-woff/Audrey-Bold.woff")
+  src: url("../audrey-woff/Audrey-Bold.woff");
   font-weight: bold;
 }
 
@@ -46,10 +46,11 @@
 
 nav ul{
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   list-style-type: none;
   font-size: 24px;
-  /* align-items: center; */
+  align-items: center;
 }
 
 header {
@@ -72,7 +73,7 @@ header {
   text-decoration: underline;
   font-weight: bold;
   background-color: #FFFFFF;
-  padding: .5em;
+  padding: .1em;
 }
 
 body {
@@ -208,50 +209,17 @@ input[type=submit]:hover {
 }
 
 
-/* IDs */
+/* Larger screen */
+@media all and (min-width: 800px){
+  nav ul{
+    flex-direction: row;
+  }
 
-#fonts {
-  text-align: center;
-  /* color: #000000; */
-  font-weight: bold;
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  .active_page {
+    padding: .5em;
+  }
 }
 
-#Audrey {
-  font-family: 'Audrey';
-  font-size: 24px;
-  font-weight: bold;
-  background-color: #C8A2C8;
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 1;
-}
-
-#Catamaran {
-  font-size: 24px;
-  background-color: #C8A2C8;
-  /* font-weight: bold; */
-  grid-column: 2 / span 1;
-  grid-row: 2 / span 1;
-}
-
-#Montserrat {
-  font-family: 'Montserrat Alternates';
-  font-size: 24px;
-  background-color: #C8A2C8;
-  /* font-weight: bold; */
-  grid-column: 2 / span 1;
-  grid-row: 3 / span 1;
-}
-
-#wonder {
-  font-family: 'Montserrat Alternates';
-  font-size: 24px;
-  font-weight: bold;
-  color:#69186a;
-  text-align: center;
-}
 
 /* Reduced motion */
 

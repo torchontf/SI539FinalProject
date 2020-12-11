@@ -1,0 +1,77 @@
+/* Site Details Page */
+#wonder {
+  font-family: 'Montserrat Alternates';
+  font-size: 24px;
+  font-weight: bold;
+  color: #69186a;
+  text-align: center;
+}
+
+  .card_deck {
+    display: flex;
+    grid-row-gap: 25px;
+    grid-column-gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+
+  #access, #fonts, #purple, #references, #disclaimer {
+    border: 5px solid #46230a;
+    max-width: 500px;
+    padding: 25px;
+    max-height: 550px;
+  }
+
+  img {
+    display: block;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #46230a;
+  }
+
+  h2, p {
+    text-align: center;
+  }
+
+  #fonts img {
+      position: relative;
+      top: 150px;
+      z-index: -1;
+    }
+
+  #fonts .text, #purple .text, #references .text {
+      opacity: 0;
+    }
+
+    #fonts .text {
+        position: relative;
+        top: -210px;
+      }
+
+    #fonts:hover .text, #purple:hover .text, #references:hover .text{
+      opacity: 1;
+    }
+
+    #fonts:hover img, #purple:hover img, #references:hover img {
+      opacity: 0;
+    }
+
+    #purple .text {
+      position: relative;
+      display: block;
+      top: -410px;
+    }
+
+    #references img {
+      position: relative;
+      display: block;
+      top: 75px;
+    }
+
+    #references .text {
+      position: relative;
+      display: block;
+      top: -250px;
+    }

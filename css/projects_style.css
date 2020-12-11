@@ -3,11 +3,11 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  height: 300px;
+  height: 350px;
   background-image: url("../imgs/leaves2.png");
   max-width: 100%;
   background-repeat: no-repeat;
-  justify-items: center;
+  justify: center;
   align-items: center;
   background-attachment: fixed; /* Parallax effect */
   background-size: cover;
@@ -44,7 +44,6 @@
   position: absolute;
   font-size: 24px;
   font-weight: bold;
-
 }
 
 .active:after {
@@ -67,17 +66,23 @@
 }
 
 .collapsed_gallery {
-  min-heigth: 400px
+  min-height: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
-
+  grid-row-gap: 25px;
+  grid-column-gap: 25px;
 }
 
 .collapsed_gallery > img {
-  width: 500px;
+  max-height: 350px;
   margin:auto;
+  border: 2px solid #000000;
+}
+
+main > p {
+  padding: 0 20px;
 }
 
 /* Reduced Motion */

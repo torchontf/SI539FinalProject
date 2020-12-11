@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E6C39N89J4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E6C39N89J4');
+</script>
+
 	<meta charset="UTF-8">
 	<title>Projects</title>
-	<!-- <link rel="stylesheet" href="css/html5reset.css"> -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/projects_style.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;800&display=swap">
@@ -22,7 +31,7 @@
 		<nav>
 			<h1 id="name">Tasha Torchon</h1>
 			<ul>
-				<li><a  href="index.html">Who Am I?</a></li>
+				<li><a href="index.html">Who Am I?</a></li>
 				<li><a class="active_page" href="projects.html">Projects</a></li>
 				<li><a href="site.html">Site Details</a></li>
 				<li><a href="contact_form.html">Contact</a></li>
@@ -60,25 +69,28 @@
 <button class="collapse">My Favorite Movies - Flask App</button>
 <div class="content">
 	<p>This project involved backend development for an app that looks up and stores movie information. When the user searches for a movie, the app calls APIs for OMDb (information about movie background) or TasteDive (information about similar movies). The app also connects to a SQLite database, where it saves or deletes information about a user's favorite movies. One part of the app included an automated donut chart to help visualize the genres saved in the database. Having since studied more about visualization theory and the difficulty of reading a circular chart, I would choose another type of graph (e.g. histogram) in another iteration. I might also highlight the top five genres instead of showing all the ones available. Pictures of the output for the original app are shown below. For more details, refer to the <a href="https://github.com/torchontf/SI507_FinalProject_torchont">repository for this project</a>.</p>
+	<br>
 	<div class="collapsed_gallery">
 		<img src="imgs/Description.JPG" alt="Description of Black Orpheus, the movie. It contains a poster, director name, and brief summary.">
 		<img src="imgs/GraphWithMovies.PNG" alt="A colored donut chart with 18 movie genres. Donut slices represent between 21.4 and 1.94%.">
+		<img src="imgs/MovieSuggestions.PNG" alt="A list of movie suggestions. If you like Sabrina, you might also like.">
+		<img src="imgs/AllMovies.PNG" alt="A list of favorite movies saved to SQLite. Each bullet has the movie name, year, and director.">
 	</div>
+	<br>
 </div>
-
-<!-- <img src="imgs/Homepage0.PNG" alt="Homepage: Welcome to the movies app! 0 movies have been saved.">
-<img src="imgs/AddMovie.PNG" alt="New movie: Guys and Dolls by Director Joseph L. Mankiewicz has been added.">
-<img src="imgs/Delete.PNG" alt="The Meaning of Life has been deleted from the app. Check out ALL MOVIES to see the list.">
-<img src="imgs/AllMovies.PNG" alt="A list of favorite movies saved to SQLite. Each bullet has the movie name, year, and director.">
-<img src="imgs/MovieSuggestions.PNG" alt="A list of movie suggestions. If you like Sabrina, you might also like.">-->
 
 <p>For more information about my education and professional experience, refer to <a href="https://www.linkedin.com/in/tasha-torchon/">my LinkedIn page</a>.</p>
 <br>
 <script src="js/projects.js"></script>
 </main>
-<?php $IPATH = $_SERVER["DOCUMENT_ROOT"]."/php";
-include($IPATH."footer.html"); ?>
 
+<footer>
+	<a href="https://github.com/torchontf"><img src="imgs/github.png" alt="GitHub Logo"></a>
+	<a href="https://www.linkedin.com/in/tasha-torchon"><img src="imgs/linkedin.png" alt="LinkedIn Logo"></a>
+	<a href="https://twitter.com/TashaTorchon"><img src="imgs/twitter_white.png" alt="Twitter Logo"></a>
+	<br>
+	Tasha Torchon &copy 2020
+</footer>
 
 </body>
 </html>

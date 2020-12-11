@@ -1,5 +1,5 @@
 /* About Page */
-/* Grid Container Section*/
+
 /*Gold cursor */
 body {
   cursor: url("../imgs/small_gold_torch.png"), auto;
@@ -13,10 +13,8 @@ body {
   grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: auto auto auto;
   background-image: url("../imgs/intro.png");
-  padding: 25px;
   background-attachment: fixed; /* Parallax effect */
   background-position: center;  /* Parallax effect */
-  /* background-repeat: no-repeat; /* Parallax effect */ */
   background-size: cover; /* Parallax effect */
 }
 
@@ -57,7 +55,6 @@ body {
 }
 
 /* Travel Section */
-
 #display, #caption {
   display: none;
 }
@@ -75,7 +72,7 @@ body {
   text-align:center;
   justify-content: center;
   margin: auto;
-      background-color: rgba(210, 177, 150, 0.5);
+  background-color: rgba(210, 177, 150, 0.5);
 }
 .photo {
   max-width:650px;
@@ -136,10 +133,7 @@ span {
   }
 
   #travel {
-    /* background-color: #C8A2C8; */
     padding: 5em;
-    /* #003152; */
-    /* #C8A2C8; */
   }
 
   #display{
@@ -147,19 +141,12 @@ span {
     max-width: 750px;
     height: 562px;
     margin: 0 auto;
-    /* margin-right: auto; */
     text-align: center;
     padding: 25px;
-    /* vertical-align: middle; */
     font-size: 200%;
-    /* background-color: #46230a; */
     background-color: #00022e;
     color: #e6e6ea;
     display: block;
-    /* display: table-cell; */
-    /* #C8A2C8; */
-    /* rgba(210, 177, 150, 0.5); */
-    /* background-color: #003152; */
   }
 
 
@@ -169,7 +156,6 @@ span {
     margin: 0 auto;
     text-align: center;
     padding: 25px;
-    /* font-size: 200%; */
     background-color: #00022e;
     color: #e6e6ea;
   }
@@ -182,7 +168,6 @@ span {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    /* overflow: auto; */
     max-height: 300px;
     max-width: 1000px;
     padding: 10px;

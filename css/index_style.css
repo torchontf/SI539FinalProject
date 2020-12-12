@@ -38,7 +38,7 @@ body {
 }
 
 .intro-txt h2, .intro-txt p {
-  color: #FFF5C3;
+  color: #EFF8F3;
 }
 
 .bio {
@@ -64,7 +64,7 @@ body {
   flex-wrap: wrap;
   /* overflow: auto; */
   max-height: 750px;
-  max-width: 700px;
+  max-width: 360px;
   padding: 10px;
   overflow: auto;
   border: 1px solid #000000;
@@ -74,14 +74,14 @@ body {
   background-color: rgba(210, 177, 150, 0.5);
 }
 .photo {
-  max-width:650px;
+  max-width:350px;
   padding: 10px;
 }
 
 span {
   font-family: 'Catamaran', sans-serif;
   border: 5px solid;
-  max-width: 650px;
+  min-width: 300px;
   margin: 0 auto;
   text-align: center;
   padding: 25px;
@@ -99,21 +99,44 @@ span {
   height: 1px;
   position: absolute;
   top: 0;
-  left: 100%
+  left: 100%;
   visibility: hidden;
   content: "";
 }
 
-/* Larger screen */
-@media all and (min-width: 800px){
+/* Tablet */
 
+@media all and (min-width: 601px){
   .grid-container {
     grid-row-gap: 25px;
     grid-template-columns: 1fr 3fr 3fr 1fr;
     grid-template-rows: auto auto auto auto;
     padding: 25px;
+    align-items: center;
   }
 
+  .intro-img {
+    grid-row: 2 / span 1;
+    grid-column: 3 / auto;
+    min-width: 250px;
+  }
+
+  .intro-txt {
+    grid-row: 1 / span 3;
+    grid-column: 2/ auto;
+  }
+
+  .bio {
+    background-color: #69186a;
+    grid-row: 4 / auto;
+    grid-column: 2 / span 2;
+  }
+}
+
+
+
+/* Tablet */
+@media all and (min-width: 1025px){
   .intro-img {
     grid-row: 1 / span 3;
     grid-column: 3 / auto;
@@ -122,12 +145,6 @@ span {
   .intro-txt {
     grid-row: 2 / span 1;
     grid-column: 2/ auto;
-  }
-
-  .bio {
-    background-color: #69186a;
-    grid-row: 4 / auto;
-    grid-column: 2 / span 2;
   }
 
   #travel {

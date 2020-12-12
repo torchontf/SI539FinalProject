@@ -7,6 +7,24 @@
   text-align: center;
 }
 
+
+div img {
+  display: block;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid #46230a;
+}
+
+p {
+  padding: 0 15px;
+}
+
+h2, p {
+  text-align: center;
+}
+
+@media all and (min-width: 601px){
   .card_deck {
     display: flex;
     grid-row-gap: 25px;
@@ -18,60 +36,64 @@
 
   #access, #fonts, #purple, #references, #disclaimer {
     border: 5px solid #46230a;
-    max-width: 500px;
+    max-width: 400px;
     padding: 25px;
     max-height: 550px;
+    overflow: auto;
   }
+}
 
-  img {
-    display: block;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 5px solid #46230a;
-  }
 
-  h2, p {
-    text-align: center;
+@media all and (min-width: 1025px){
+#access, #fonts, #purple, #references, #disclaimer  {
+    max-height: 700px;
+    overflow: visible;
   }
 
   #fonts img {
       position: relative;
-      top: 150px;
+      top: 100px;
       z-index: -1;
     }
 
-  #fonts .text, #purple .text, #references .text {
-      opacity: 0;
-    }
-
-    #fonts .text {
-        position: relative;
-        top: -210px;
+    #fonts p {
+      position: relative;
+      top: -200px;
       }
 
-    #fonts:hover .text, #purple:hover .text, #references:hover .text{
-      opacity: 1;
-    }
-
-    #fonts:hover img, #purple:hover img, #references:hover img {
-      opacity: 0;
-    }
-
-    #purple .text {
+    #purple p {
       position: relative;
       display: block;
-      top: -410px;
+      top: -440px;
+    }
+
+    #references p {
+      position: relative;
+      display: block;
+      top: -330px;
     }
 
     #references img {
       position: relative;
       display: block;
-      top: 75px;
+      top: 25px;
     }
 
-    #references .text {
-      position: relative;
-      display: block;
-      top: -250px;
+    #fonts img, #purple img, #references img {
+      max-width: 400px;
     }
+
+    #fonts h2, #fonts p, #purple h2, #purple p, #references h2, #references p {
+        display: block;
+        opacity: 0;
+      }
+
+    #fonts:hover h2, #fonts:hover p, #purple:hover h2, #purple:hover p, #references:hover h2, #references:hover p {
+    opacity: 1;
+    }
+
+  #fonts:hover img, #purple:hover img, #references:hover img {
+    opacity: 0;
+  }
+
+}

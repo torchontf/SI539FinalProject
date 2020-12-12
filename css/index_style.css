@@ -75,6 +75,7 @@ body {
 }
 .photo {
   max-width:350px;
+  max-height: 260px;
   padding: 10px;
 }
 

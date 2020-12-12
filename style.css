@@ -1,0 +1,154 @@
+/* All Pages */
+
+@font-face {
+  font-family: Audrey;
+  src: url("../audrey-woff/Audrey-Normal.woff");
+}
+
+@font-face {
+  font-family: Audrey;
+  src: url("../audrey-woff/Audrey-Bold.woff");
+  font-weight: bold;
+}
+
+:focus {
+  color: #81007F;
+  font-weight: bold;
+}
+
+#name {
+  font-family: 'Montserrat Alternates';
+  color:#69186a;
+  font-size: 42px;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: .15em;
+}
+
+.skip a{
+  background: #FFFFFF;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: left 1s ease-out;
+  transition: left 1s ease-out;
+  z-index: 3;
+  position: absolute;
+  left: -205px;
+}
+
+.skip a:focus{
+  left: 0;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style-type: none;
+  font-size: 24px;
+  align-items: center;
+}
+
+header {
+  background-color: rgba(255, 255, 191, 0.5);
+  box-shadow: 0 5px 6px -6px #888888;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  color: #f8f8ff;
+
+  /* padding: 30px; */
+  top: 0;
+  /* margin: -1em; */
+  /* add back negative margin value */
+  padding: .1em;
+  width: 100%;
+}
+
+.active_page {
+  text-decoration: underline;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  padding: .1em;
+  border-radius: 5px 20px 15px;
+}
+
+body {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 18px;
+  /* color:#4a134a; */
+  color: #46230a;
+  background-color: rgba(210, 177, 150, 0.2);
+  cursor: url("../imgs/small_purple_torch.png"), auto;
+  letter-spacing: .1em;
+}
+
+h1 {
+  font-family: Audrey;
+  text-align: center;
+}
+
+h2 {
+  letter-spacing: 3px;
+}
+
+.image_title {
+  text-align: center;
+}
+
+figure {
+  background-color: #C8A2C8;
+}
+
+footer {
+  background-color: #004040;
+  color: #f8f8ff;
+  text-align: right;
+  min-height: 40px;
+  bottom: 0;
+  margin: -1.2rem;
+  padding: 1.2rem;
+  width: 100%;
+}
+
+footer img {
+  height: 36px;
+}
+
+a {
+  color:#008080;
+  text-decoration: none;
+}
+
+main a {
+  color:#00022e;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.current_link {
+  color: #81007F;
+  font-weight: bold;
+}
+
+/* Larger screen */
+@media all and (min-width: 800px){
+  nav ul{
+    flex-direction: row;
+  }
+
+  .active_page {
+    padding: .5em;
+  }
+}
+
+
+/* Reduced motion */
+
+@media screen and (prefers-reduced-motion: reduce){
+  .skip a{
+    -webkit-transition: none; 
+    transition: none;
+   }
+
+}

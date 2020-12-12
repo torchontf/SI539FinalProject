@@ -1,8 +1,4 @@
-/* To do: stretch out footer, flavicon, offset picture and background using grid, content on other parts of site, reduced motion, fill grid column fill with background color,  */
-
-/* .custom {
-  cursor: url("imgs/small_purple_torch.png"), auto;
-} */
+/* All Pages */
 
 @font-face {
   font-family: Audrey;
@@ -108,11 +104,9 @@ footer {
   background-color: #004040;
   color: #f8f8ff;
   text-align: right;
-  /* padding: 30px; */
   min-height: 40px;
   bottom: 0;
   margin: -1.2rem;
-  /* add back negative margin value */
   padding: 1.2rem;
   width: 100%;
 }
@@ -124,6 +118,12 @@ footer img {
 a {
   color:#008080;
   text-decoration: none;
+}
+
+main a {
+  color:#00022e;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .current_link {
@@ -147,8 +147,8 @@ a {
 
 @media screen and (prefers-reduced-motion: reduce){
   .skip a{
-    -webkit-transition: none; /* sets to default setting */
-    transition: none;        /* sets to default setting */
+    -webkit-transition: none; 
+    transition: none;
    }
 
 }

@@ -38,7 +38,7 @@ body {
 }
 
 .intro-txt h2, .intro-txt p {
-  color: #EFF8F3;
+  color: #000000;
 }
 
 .bio {
@@ -60,9 +60,7 @@ body {
 
 #travel_pics {
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
-  /* overflow: auto; */
   max-height: 750px;
   max-width: 360px;
   padding: 10px;
@@ -131,6 +129,16 @@ span {
     background-color: #69186a;
     grid-row: 4 / auto;
     grid-column: 2 / span 2;
+  }
+
+  #travel_pics {
+    max-height: 750px;
+    max-width: 550px;
+  }
+
+  .photo {
+    max-width:500px;
+    max-height: 410px;
   }
 }
 
